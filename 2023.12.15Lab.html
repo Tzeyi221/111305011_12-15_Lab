@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Buttons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .button-container {
+      display: flex;
+    }
+
+    .button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    /* 不同顏色的按鈕樣式 */
+    .button.blue {
+      background-color: #3498db;
+    }
+
+    .button.green {
+      background-color: #2ecc71;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-container"> 
+    <button class="button blue" onclick="alert('Input 1 is '+ input1)">Show input 1</button>
+    <button class="button green" onClick="alert('Input 2 is '+ input2)">Show input 2</button>
+  </div>
+  <script>
+    // 提示使用者輸入第一個數字
+    var input1 = window.prompt("Enter the first number:");
+
+    // 轉換輸入為整數
+    var number1 = parseInt(input1, 10);
+
+    // 提示使用者輸入第二個數字
+    var input2 = window.prompt("Enter the second number:");
+
+    // 轉換輸入為整數
+    var number2 = parseInt(input2, 10);
+
+    // 計算並顯示結果
+    var result = number1 + number2;
+
+    // 根據條件更改背景顏色
+    if (number1 > number2) {
+      document.body.style.backgroundColor = 'lightblue';
+      document.writeln("firstInput > secondInput");
+    } else if (number1 < number2) {
+      document.body.style.backgroundColor = 'orange';
+      document.writeln("firstInput < secondInput");
+    } else {
+      document.body.style.backgroundColor = 'lightyellow';
+      document.writeln("firstInput = secondInput");
+    }
+  </script>
+</body>
+</html>
